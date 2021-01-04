@@ -4,35 +4,40 @@
         <title>WEB1 - Welcome</title>
         <meta charset="utf-8">
         <!-- <link rel="stylesheet" href="style.css"> -->
+        <script>
+            function nightDayHandler( self ){            
+                var target = document.querySelector('body');
+                if( self.value === 'night' ){
+                    self.value = 'day';
+                    target.style.backgroundColor = 'black';
+                    target.style.color = 'white';
+
+                    var links = document.querySelectorAll('a');
+                    var i = 0;
+                    while(i<links.length){
+                        links[i].style.color='powderblue';
+                        i=i+1;
+                    }
+                } else {
+                    self.value = 'night';
+                    target.style.backgroundColor = 'white';
+                    target.style.color = 'black';
+
+                    var links = document.querySelectorAll('a');
+                    var i = 0;
+                    while(i<links.length){
+                        links[i].style.color='blue';
+                        i=i+1;
+                    }
+                }
+            }
+        </script>
     </head>
 
     <body>
         <h1><a href="index.html">WEB</a></h1>
         <input id="toggle" type="button" value="night" onclick="
-            var target = document.querySelector('body');
-            if( this.value === 'night' ){
-                this.value = 'day';
-                target.style.backgroundColor = 'black';
-                target.style.color = 'white';
-
-                var links = document.querySelectorAll('a');
-                var i = 0;
-                while(i<links.length){
-                    links[i].style.color='powderblue';
-                    i=i+1;
-                }
-            } else {
-                this.value = 'night';
-                target.style.backgroundColor = 'white';
-                target.style.color = 'black';
-
-                var links = document.querySelectorAll('a');
-                var i = 0;
-                while(i<links.length){
-                    links[i].style.color='blue';
-                    i=i+1;
-                }
-            }
+            nightDayHandler( this );
         ">
         <div id="grid">
             <ol>
