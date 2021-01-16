@@ -8,6 +8,14 @@ body{
     /*transition: color 0.5s ease-in-out;*/
 }
 
+h1{
+    font-size: 120px;
+}
+
+.js-greetings{
+    font-size: 30px;
+}
+
 /* Class Selector */
 .btn{
     cursor: pointer;
